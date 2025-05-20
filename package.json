@@ -22,7 +22,8 @@
         "lint-staged": "^12.3.2",
         "next": "15.3.2",
         "react": "^19.0.0",
-        "react-dom": "^19.0.0"
+        "react-dom": "^19.0.0",
+        "react-feather": "^2.0.10"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
