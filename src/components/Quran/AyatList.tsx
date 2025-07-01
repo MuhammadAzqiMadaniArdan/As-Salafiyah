@@ -91,7 +91,7 @@ const AyatList = ({ suratId }: Props) => {
                     >
                         <hr className="text-secondary mb-2 shadow-2xl shadow-amber-50" />
                         {isWithBismillah && (
-                            <h4 className="lg:text-3xl text-2xl text-center mb-5">
+                            <h4 className="lg:text-3xl text-2xl text-center mb-5 arab">
                                 {bismillah}
                             </h4>
                         )}
@@ -99,7 +99,7 @@ const AyatList = ({ suratId }: Props) => {
                             {ayat.nomor}
                         </h3>
                         <div className="flex flex-col gap-8">
-                            <h3 className="lg:text-3xl text-2xl text-end leading-loose">
+                            <h3 className="lg:text-3xl text-2xl text-end leading-loose arab">
                                 {arabText}
                             </h3>
                             <div>

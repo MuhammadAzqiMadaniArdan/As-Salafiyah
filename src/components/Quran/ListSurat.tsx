@@ -29,7 +29,7 @@ export const fadeInAnimationVariants = {
 const ListSurat = ({ qurans }: Props) => {
     return (
         <section className="text-white py-5">
-            <h2 className="text-3xl mb-3">Daftar Surat</h2>
+            <h2 className="text-3xl mb-3 text-center">Daftar Surat</h2>
             <div className="rounded-2xl px-2 py-3  gap-3 grid lg:grid-cols-3 md:grid-cols-2  grid-cols-1 ">
                 {qurans.map(
                     (

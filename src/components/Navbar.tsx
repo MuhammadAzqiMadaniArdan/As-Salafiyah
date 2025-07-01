@@ -39,7 +39,7 @@ const Navbar = () => {
                 <div className="lg:flex justify-around gap-10 lg:text-2xl text-lg font-semibold hidden">
                     <Link href={'/quran'}>Al-Quran</Link>
                     <Link href={'/doa'}>Doa</Link>
-                    <Link href={'/shalat'}>Shalat</Link>
+                    <Link href={'/sholat'}>Shalat</Link>
                 </div>
                 <div
                     className={`lg:inline hidden bg-accent p-1 transition-all ease-in ${theme == 'Dark' ? 'pr-5' : 'pl-5'} rounded-2xl cursor-pointer`}
@@ -82,7 +82,7 @@ const Navbar = () => {
                                 Doa
                             </Link>
                             <Link
-                                href={'/shalat'}
+                                href={'/sholat'}
                                 onClick={() => setMenu(false)}
                             >
                                 Shalat

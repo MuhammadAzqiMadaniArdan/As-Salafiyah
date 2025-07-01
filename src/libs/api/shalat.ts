@@ -1,8 +1,11 @@
-import axios from "axios";
+import axios from 'axios'
 
-const baseURL = "https://waktu-sholat.vercel.app/prayer?";
-
-export const  getAllShalat = async (latitude: number | undefined, longitude: number | undefined) => {
-    const result = await axios.get(`${baseURL}latitude=${latitude}&longitude=${longitude}`)
-    return result.data
+export const getAllShalat = async (
+    city: number | undefined,
+    date: string | undefined,
+) => {
+    const result = await axios.get(
+        `http://localhost:3000/api/sholat?city=${city}&date=${date}`,
+    )
+    return result.data.data.jadwal || null
 }

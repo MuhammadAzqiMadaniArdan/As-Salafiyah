@@ -10,56 +10,58 @@ export const Page = async () => {
             <HeaderQuran />
             <main className="bg-accent px-10 relative z-10 ">
                 <section className="container-populer text-white ">
-                    <h2 className="text-3xl mb-3">Surat Populer</h2>
+                    <h2 className="text-3xl mb-3 text-center">Surat Populer</h2>
                     <div
                         className="overflow-x-auto py-10 scroll-smooth"
                         style={{
                             scrollbarWidth: 'thin',
                         }}
                     >
-                        <div className="grid grid-cols-6 gap-4 w-max ">
-                            <PopulerSuratCard
-                                id={1}
-                                nama="Al-Fatihah"
-                                arti="Pembukaan"
-                                ayat={7}
-                                asma="الفاتحة"
-                            />
-                            <PopulerSuratCard
-                                id={18}
-                                nama="Al Kahfi"
-                                arti="Gua"
-                                ayat={110}
-                                asma="الكهف"
-                            />
-                            <PopulerSuratCard
-                                id={36}
-                                nama="Yaa Siin"
-                                arti="YaSin"
-                                ayat={83}
-                                asma="يس"
-                            />
-                            <PopulerSuratCard
-                                id={55}
-                                nama="Ar Rahmaan"
-                                arti="Yang Maha Pemurah"
-                                ayat={78}
-                                asma="الرحمن"
-                            />
-                            <PopulerSuratCard
-                                id={56}
-                                nama="Al Waaqi'ah"
-                                arti="Hari Kiamat"
-                                ayat={78}
-                                asma="الواقعة"
-                            />
-                            <PopulerSuratCard
-                                id={67}
-                                nama="Al Mulk"
-                                arti="Kerajaan"
-                                ayat={30}
-                                asma="الملك"
-                            />
+                        <div className="flex justify-center">
+                            <div className="grid grid-cols-6 gap-4 w-max">
+                                <PopulerSuratCard
+                                    id={1}
+                                    nama="Al-Fatihah"
+                                    arti="Pembukaan"
+                                    ayat={7}
+                                    asma="الفاتحة"
+                                />
+                                <PopulerSuratCard
+                                    id={18}
+                                    nama="Al Kahfi"
+                                    arti="Gua"
+                                    ayat={110}
+                                    asma="الكهف"
+                                />
+                                <PopulerSuratCard
+                                    id={36}
+                                    nama="Yaa Siin"
+                                    arti="YaSin"
+                                    ayat={83}
+                                    asma="يس"
+                                />
+                                <PopulerSuratCard
+                                    id={55}
+                                    nama="Ar Rahmaan"
+                                    arti="Yang Maha Pemurah"
+                                    ayat={78}
+                                    asma="الرحمن"
+                                />
+                                <PopulerSuratCard
+                                    id={56}
+                                    nama="Al Waaqi'ah"
+                                    arti="Hari Kiamat"
+                                    ayat={78}
+                                    asma="الواقعة"
+                                />
+                                <PopulerSuratCard
+                                    id={67}
+                                    nama="Al Mulk"
+                                    arti="Kerajaan"
+                                    ayat={30}
+                                    asma="الملك"
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>

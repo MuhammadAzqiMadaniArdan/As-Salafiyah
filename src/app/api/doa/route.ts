@@ -1,11 +1,13 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server'
 
 export async function GET() {
-  try {
-    const res = await fetch('https://doa-doa-api-ahmadramadhan.fly.dev/api');
-    const data = await res.json();
-    return NextResponse.json(data);
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch doa list' }, { status: 500 });
-  }
+    try {
+        const res = await fetch('https://api.myquran.com/v2/doa/all')
+        const data = await res.json()
+        return NextResponse.json(data.data)
+    } catch (_err: unknown) {
+        const message =
+            _err instanceof Error ? _err.message : 'Failed to fetch doa list'
+        return NextResponse.json({ _error: message }, { status: 500 })
+    }
 }
