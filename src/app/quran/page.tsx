@@ -12,13 +12,13 @@ export const Page = async () => {
                 <section className="container-populer text-white ">
                     <h2 className="text-3xl mb-3 text-center">Surat Populer</h2>
                     <div
-                        className="overflow-x-auto py-10 scroll-smooth"
+                        className="overflow-x-auto py-10 scroll-smooth "
                         style={{
                             scrollbarWidth: 'thin',
                         }}
                     >
-                        <div className="flex justify-center">
-                            <div className="grid grid-cols-6 gap-4 w-max">
+                        <div className="2xl:flex 2xl:justify-center">
+                            <div className="grid grid-cols-7 gap-4 w-max ">
                                 <PopulerSuratCard
                                     id={1}
                                     nama="Al-Fatihah"
@@ -60,6 +60,13 @@ export const Page = async () => {
                                     arti="Kerajaan"
                                     ayat={30}
                                     asma="الملك"
+                                />
+                                <PopulerSuratCard
+                                    id={114}
+                                    nama="An Naas"
+                                    arti="Manusia"
+                                    ayat={6}
+                                    asma="الناس"
                                 />
                             </div>
                         </div>
