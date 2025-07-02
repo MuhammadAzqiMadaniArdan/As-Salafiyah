@@ -1,14 +1,12 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
-
 @theme {
-  --color-primary:#F1F6F9;
-  --color-secondary:#9BA4B5;
-  --color-font:#212A3E;
-  --color-accent:#394867;
+    --color-primary: #f1f6f9;
+    --color-secondary: #9ba4b5;
+    --color-font: #212a3e;
+    --color-accent: #394867;
 }
-
 
 .loading {
     width: 100px;
@@ -22,10 +20,10 @@
 }
 
 @font-face {
-  font-family: 'LPMQ';
-  src: url('/fonts/LPMQ_IsepMisbah.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'LPMQ';
+    src: url('/fonts/LPMQ_IsepMisbah.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @keyframes s9 {
@@ -35,5 +33,5 @@
 }
 
 .arab {
-  font-family: 'LPMQ', sans-serif;
+    font-family: 'LPMQ', sans-serif;
 }

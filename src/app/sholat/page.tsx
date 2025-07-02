@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
+import { motion as m } from 'framer-motion'
 import { getAllShalat } from '@/libs/api/shalat'
+import Page from '../loading'
 
 type JadwalType = {
     tanggal: string
@@ -16,6 +18,7 @@ type JadwalType = {
 
 export default function SholatPage() {
     const [jadwal, setJadwal] = useState<JadwalType | null>(null)
+    const [loading, setLoading] = useState(true)
     const [nextSholat, setNextSholat] = useState<{
         nama: string
         sisa: string
@@ -23,6 +26,7 @@ export default function SholatPage() {
 
     useEffect(() => {
         const fetchData = async () => {
+            setLoading(true)
             const today = new Date()
             const date = today.toISOString().split('T')[0]
             const cityId = 1204
@@ -32,7 +36,6 @@ export default function SholatPage() {
                 setJadwal(data)
 
                 const now = new Date()
-
                 const waktuList = [
                     { nama: 'Subuh', waktu: data.subuh },
                     { nama: 'Dzuhur', waktu: data.dzuhur },
@@ -42,7 +45,6 @@ export default function SholatPage() {
                 ]
 
                 let foundNext = null
-
                 for (let i = 0; i < waktuList.length; i++) {
                     const [jam, menit] = waktuList[i].waktu
                         .split(':')
@@ -73,8 +75,10 @@ export default function SholatPage() {
                 }
 
                 setNextSholat(foundNext)
-            } catch (_error) {
-                console.error('Gagal fetch jadwal sholat:', _error)
+            } catch (error) {
+                console.error('Gagal fetch jadwal sholat:', error)
+            } finally {
+                setLoading(false)
             }
         }
 
@@ -88,101 +92,116 @@ export default function SholatPage() {
         },
     )
 
+    if (loading) {
+        return <Page />
+    }
+
     return (
-        <main className="bg-[#F1F6FA] min-h-screen font-sans text-[#243A63] px-6 py-8 space-y-10">
+        <main className="bg-[#F1F6FA] dark:bg-font min-h-screen font-sans text-[#243A63] dark:text-gray-100 px-4 md:px-12 py-8 space-y-10">
             <section className="text-center space-y-2">
-                <p className="text-xl sm:text-3xl font-stretch-100%">
-                    Let each call to prayer remind you.
-                </p>
-                <p className="text-xl sm:text-3xl font-semibold">
-                    Allah never <span className="font-bold">forgets you</span>,
-                </p>
-                <p className="text-xl sm:text-3xl font-semibold">
-                    not even for a <span className="font-bold">second</span>
-                </p>
+                <m.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <p className="text-xl md:text-2xl lg:text-3xl font-stretch-100%">
+                        Let each call to prayer remind you.
+                    </p>
+                    <p className="text-xl md:text-2xl lg:text-3xl font-semibold">
+                        Allah never{' '}
+                        <span className="font-bold">forgets you</span>,
+                    </p>
+                    <p className="text-xl md:text-2xl lg:text-3xl font-semibold">
+                        not even for a <span className="font-bold">second</span>
+                    </p>
+                </m.div>
             </section>
 
-            <section className="flex flex-row items-center justify-between flex-wrap sm:gap-4 sm:px-48 -red-500">
-                <div className="w-[60%] sm:w-[75%] bg-[#243A63] text-white rounded-2xl px-4 py-6 text-center shadow-md flex flex-col justify-center translate-y-2 sm:translate-y-2">
-                    <p className="text-sm sm:text-base mb-1">
+            <section className="flex flex-row flex-wrap items-center justify-center">
+                <m.div
+                    className="w-[62%] sm:w-[65%] md:w-3/5 bg-[#243A63] dark:bg-[#F1f6f9] text-white dark:text-font rounded-2xl py-6 text-center shadow-md flex flex-col justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                >
+                    <p className="text-sm md:text-base mb-1">
                         Waktu sholat selanjutnya:
                     </p>
-                    <p className="text-xl sm:text-2xl font-bold">
-                        {nextSholat?.nama ?? '...'}
+                    <p className="text-xl md:text-2xl font-bold">
+                        {nextSholat?.nama}
                     </p>
-                    <p className="text-xs sm:text-sm mt-1">
-                        dalam {nextSholat?.sisa ?? '...'}
+                    <p className="text-xs md:text-sm mt-1">
+                        dalam {nextSholat?.sisa}
                     </p>
-                </div>
-                <div className="w-[35%] sm:w-[22%] flex items-center justify-center  -red-500">
-                    <div className="w-28 h-28 sm:w-32 sm:h-32">
+                </m.div>
+
+                <m.div
+                    className="w-[38%] sm:w-[25%] md:w-2/9 flex items-center justify-center"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                >
+                    <div className="w-24 h-24 md:w-32 md:h-32">
                         <AnalogClock />
                     </div>
-                </div>
+                </m.div>
             </section>
 
             <section>
-                <h2 className="text-center text-2xl sm:text-4xl font-bold mb-6">
+                <m.h2
+                    className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.6 }}
+                >
                     Jadwal Sholat Hari Ini
-                </h2>
-                <div className="rounded-xl overflow-hidden shadow-md sm:mx-36">
+                </m.h2>
+
+                <m.div
+                    className="rounded-xl overflow-hidden shadow-md mx-auto max-w-3/4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
+                >
                     <table className="w-full text-base">
                         <tbody>
                             {jadwal && (
                                 <>
-                                    <tr className="even:bg-[#2C3D6B] odd:bg-[#243A63] text-white">
-                                        <td className="px-10 py-4 sm:px-72  text-center sm:text-right font-medium w-2/3">
-                                            Imsak
-                                        </td>
-                                        <td className="px-10 py-4 text-left w-1/3">
-                                            {jadwal.imsak}
-                                        </td>
-                                    </tr>
-                                    <tr className="even:bg-[#2C3D6B] odd:bg-[#243A63] text-white">
-                                        <td className="px-10 py-4 sm:px-72  text-center sm:text-right font-medium w-2/3">
-                                            Subuh
-                                        </td>
-                                        <td className="px-10 py-4 text-left w-1/3">
-                                            {jadwal.subuh}
-                                        </td>
-                                    </tr>
-                                    <tr className="even:bg-[#2C3D6B] odd:bg-[#243A63] text-white">
-                                        <td className="px-10 py-4 sm:px-72  text-center sm:text-right font-medium w-2/3">
-                                            Dzuhur
-                                        </td>
-                                        <td className="px-10 py-4 text-left w-1/3">
-                                            {jadwal.dzuhur}
-                                        </td>
-                                    </tr>
-                                    <tr className="even:bg-[#2C3D6B] odd:bg-[#243A63] text-white">
-                                        <td className="px-10 py-4 sm:px-72  text-center sm:text-right font-medium w-2/3">
-                                            Ashar
-                                        </td>
-                                        <td className="px-10 py-4 text-left w-1/3">
-                                            {jadwal.ashar}
-                                        </td>
-                                    </tr>
-                                    <tr className="even:bg-[#2C3D6B] odd:bg-[#243A63] text-white">
-                                        <td className="px-10 py-4 sm:px-72  text-center sm:text-right font-medium w-2/3">
-                                            Maghrib
-                                        </td>
-                                        <td className="px-10 py-4 text-left w-1/3">
-                                            {jadwal.maghrib}
-                                        </td>
-                                    </tr>
-                                    <tr className="even:bg-[#2C3D6B] odd:bg-[#243A63] text-white">
-                                        <td className="px-10 py-4 sm:px-76  text-center sm:text-right font-medium w-2/3">
-                                            Isya
-                                        </td>
-                                        <td className="px-10 py-4 text-left w-1/3">
-                                            {jadwal.isya}
-                                        </td>
-                                    </tr>
+                                    {[
+                                        { label: 'Imsak', value: jadwal.imsak },
+                                        { label: 'Subuh', value: jadwal.subuh },
+                                        {
+                                            label: 'Dzuhur',
+                                            value: jadwal.dzuhur,
+                                        },
+                                        { label: 'Ashar', value: jadwal.ashar },
+                                        {
+                                            label: 'Maghrib',
+                                            value: jadwal.maghrib,
+                                        },
+                                        { label: 'Isya', value: jadwal.isya },
+                                    ].map((item, i) => (
+                                        <tr
+                                            key={item.label}
+                                            className={`${
+                                                i % 2 === 0
+                                                    ? 'bg-[#2C3D6B] dark:bg-[#F1f6f9]'
+                                                    : 'bg-[#243A63] dark:bg-[#f6fafd]'
+                                            } text-white dark:text-font`}
+                                        >
+                                            <td className="px-4 md:px-12 py-4 text-center font-medium">
+                                                {item.label}
+                                            </td>
+                                            <td className="px-4 md:px-12 py-4 text-center">
+                                                {item.value}
+                                            </td>
+                                        </tr>
+                                    ))}
                                 </>
                             )}
                         </tbody>
                     </table>
-                </div>
+                </m.div>
             </section>
         </main>
     )
