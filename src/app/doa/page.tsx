@@ -47,7 +47,7 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                 >
-                    <h2 className="text-4xl md:text-4xl text-[#243A63] dark:text-gray-100">
+                    <h2 className="text-4xl my-6 md:text-6xl p-5 md:p-15 text-[#243A63] dark:text-gray-100">
                         At every dawn and dusk, let your{' '}
                         <strong className="text-[#132952] dark:text-white">
                             Prayers
@@ -76,7 +76,7 @@ export default function Home() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.3 }}
-                            className="bg-white text-black px-6 py-4 rounded-xl max-w-10/12 mx-auto shadow-md"
+                            className="bg-white text-black px-6 py-9 rounded-xl max-w-10/12 mx-auto shadow-md"
                         >
                             <h4 className="text-3xl font-semibold">
                                 {randomDoa.judul}

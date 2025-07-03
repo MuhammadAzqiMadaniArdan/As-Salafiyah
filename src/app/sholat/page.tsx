@@ -98,20 +98,20 @@ export default function SholatPage() {
 
     return (
         <main className="bg-[#F1F6FA] dark:bg-font min-h-screen font-sans text-[#243A63] dark:text-gray-100 px-4 md:px-12 py-8 space-y-10">
-            <section className="text-center space-y-2">
+            <section className="text-center lg:py-8 space-y-2">
                 <m.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <p className="text-xl md:text-2xl lg:text-3xl font-stretch-100%">
+                    <p className="text-xl md:text-3xl lg:text-6xl font-stretch-100%">
                         Let each call to prayer remind you.
                     </p>
-                    <p className="text-xl md:text-2xl lg:text-3xl font-semibold">
+                    <p className="text-xl md:text-3xl lg:text-6xl font-semibold">
                         Allah never{' '}
                         <span className="font-bold">forgets you</span>,
                     </p>
-                    <p className="text-xl md:text-2xl lg:text-3xl font-semibold">
+                    <p className="text-xl md:text-3xl lg:text-6xl font-semibold">
                         not even for a <span className="font-bold">second</span>
                     </p>
                 </m.div>
@@ -158,7 +158,7 @@ export default function SholatPage() {
                 </m.h2>
 
                 <m.div
-                    className="rounded-xl overflow-hidden shadow-md mx-auto max-w-3/4"
+                    className="rounded-xl overflow-hidden shadow-md mx-auto max-w-4/5"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6 }}
