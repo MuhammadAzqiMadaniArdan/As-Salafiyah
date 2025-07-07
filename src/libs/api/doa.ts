@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const baseURL = process.env.NEXT_PUBLIC_BASE_URL
+// const baseURL = process.env.NEXT_PUBLIC_BASE_URL
+const baseURL = 'http://localhost:3000'
 
 export const getAllDoa = async () => {
     const result = await axios.get(`${baseURL}/api/doa`)
