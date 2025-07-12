@@ -97,7 +97,7 @@ export default function SholatPage() {
     }
 
     return (
-        <main className="bg-[#F1F6FA] dark:bg-font min-h-screen font-sans text-[#243A63] dark:text-gray-100 px-4 md:px-12 py-8 space-y-10">
+        <main className="bg-[#eff6fb] dark:bg-accent min-h-screen font-sans text-[#243A63] dark:text-gray-100 px-4 md:px-12 py-15 space-y-10">
             <section className="text-center lg:py-8 space-y-2">
                 <m.div
                     initial={{ opacity: 0, y: 20 }}

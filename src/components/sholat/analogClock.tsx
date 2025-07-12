@@ -14,7 +14,7 @@ export default function AnalogClock() {
 
     return (
         <div className="flex flex-col items-center w-full">
-            <div className="relative aspect-square w-full bg-white dark:bg-font rounded-full border-[6px] border-[#243A63] dark:border-[#F1f6f9]">
+            <div className="relative aspect-square w-full bg-white dark:bg-accent rounded-full border-[6px] border-[#243A63] dark:border-[#F1f6f9]">
                 <div className="absolute top-1/2 left-1/2 w-[10%] h-[10%] bg-[#243A63] dark:bg-[#F1f6f9] rounded-full z-10 -translate-x-1/2 -translate-y-1/2" />
                 <div
                     className="absolute top-1/2 left-1/2 w-[3%] h-[30%] bg-[#243A63] dark:bg-[#F1f6f9] origin-bottom z-2"
