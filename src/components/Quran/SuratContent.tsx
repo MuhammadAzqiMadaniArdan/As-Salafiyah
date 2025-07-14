@@ -40,15 +40,15 @@ export default function SuratContent({ surat, ayat }: SuratContentProps) {
     const nomorSurat = suratId
 
     useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
+        const handleKeyUp = (e: KeyboardEvent) => {
             if (e.key === 'ArrowLeft' && nomorSurat > 1) {
                 router.push(`/quran/${nomorSurat - 1}`)
             } else if (e.key === 'ArrowRight' && nomorSurat < 114) {
                 router.push(`/quran/${nomorSurat + 1}`)
             }
         }
-        window.addEventListener('keydown', handleKeyDown)
-        return () => window.removeEventListener('keydown', handleKeyDown)
+        window.addEventListener('keyup', handleKeyUp)
+        return () => window.removeEventListener('keyup', handleKeyUp)
     }, [nomorSurat, router])
 
     const handleLoadMore = () => setLimit((prev) => prev + 10)
