@@ -1,27 +1,37 @@
 @import 'tailwindcss';
-
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary:#F1F6F9;
-  --color-secondary:#9BA4B5;
-  --color-font:#212A3E;
-  --color-accent:#394867;
+    --color-primary: #f1f6f9;
+    --color-secondary: #9ba4b5;
+    --color-font: #212a3e;
+    --color-accent: #394867;
 }
-
 
 .loading {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background:
-        radial-gradient(farthest-side, #3572ef 95%, #0000) 50% 1px/24px 24px
+        radial-gradient(farthest-side, #394867 95%, #0000) 50% 1px/24px 24px
             no-repeat,
         radial-gradient(farthest-side, #0000 calc(100% - 28px), #e4e4ed 0);
     animation: s9 1s infinite linear;
+}
+
+@font-face {
+    font-family: 'LPMQ';
+    src: url('/fonts/LPMQ IsepMisbah.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @keyframes s9 {
     to {
         transform: rotate(1turn);
     }
+}
+
+.arab {
+    font-family: 'LPMQ', sans-serif;
 }
