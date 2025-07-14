@@ -7,7 +7,7 @@ export const getAllShalat = async (
     date: string | undefined,
 ) => {
     const result = await axios.get(
-        `${baseURL}/api/sholat?city=${city}&date=${date}`,
+        `${baseURL}/data/api/sholat?city=${city}&date=${date}`,
     )
     return result.data.data.jadwal || null
 }
