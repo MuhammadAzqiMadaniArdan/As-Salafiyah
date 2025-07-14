@@ -14,6 +14,6 @@ export const getDoaRandom = async () => {
 
 export const getDoaById = async (id: string | undefined) => {
     if (!id) throw new Error('id is required')
-    const result = await axios.get(`${baseURL}/api/doa/${id}`)
+    const result = await axios.get(`${baseURL}/data/api/doa/${id}`)
     return result.data
 }
