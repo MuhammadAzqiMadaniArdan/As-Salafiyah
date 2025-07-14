@@ -6,10 +6,10 @@ import PopulerSuratCard from '@/components/Quran/PopulerSuratCard'
 export const Page = async () => {
     const qurans = await getAllSurat()
     return (
-        <div className="dark:bg-font">
+        <main className="dark:bg-font">
             <HeaderQuran />
-            <main className="bg-accent px-10 relative z-10 ">
-                <section className="container-populer text-white ">
+            <div className="px-10 relative z-10 bg-accent rounded-t-4xl">
+                <section className="bg-accent container-populer text-white pt-5 ">
                     <h2 className="text-3xl mb-3 text-center">Surat Populer</h2>
                     <div
                         className="overflow-x-auto py-10 scroll-smooth"
@@ -72,10 +72,9 @@ export const Page = async () => {
                         </div>
                     </div>
                 </section>
-
                 <ListSurat qurans={qurans} />
-            </main>
-        </div>
+            </div>
+        </main>
     )
 }
 

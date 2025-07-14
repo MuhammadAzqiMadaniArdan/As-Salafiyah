@@ -3,9 +3,9 @@ import { motion as m, useScroll, useTransform } from 'framer-motion'
 import React, { useRef } from 'react'
 
 const HeaderQuran = () => {
-    const ref = useRef(null)
+    const scrollRef = useRef(null)
     const { scrollYProgress } = useScroll({
-        target: ref,
+        target: scrollRef,
         offset: ['start start', 'end start'],
     })
 
@@ -13,8 +13,8 @@ const HeaderQuran = () => {
     const textY = useTransform(scrollYProgress, [0, 1], ['0%', '60%'])
 
     return (
-        <div ref={ref}>
-            <m.header
+        <div ref={scrollRef} className="relative">
+            <m.section
                 className="text-center px-10 py-20 mb-20 overflow-hidden dark:bg-font dark:text-slate-50 relative -z-0"
                 style={{ y: textY }}
             >
@@ -53,11 +53,11 @@ const HeaderQuran = () => {
                 >
                     Ayo Baca Al Quran
                 </m.p>
-            </m.header>
-            <div
+            </m.section>
+            <m.div
                 className="
       w-full h-30 bg-accent rounded-t-[100%]
-      sticky z-10
+      z-10
       top-[28rem] sm:top-[27rem] md:top-[27rem] lg:top-[24rem] xl:top-[24rem]
     "
                 style={{

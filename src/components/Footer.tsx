@@ -6,15 +6,15 @@ import { GitHub, Linkedin, Mail } from 'react-feather'
 const developers = [
     {
         name: 'Rivaldo Harto Wibowo',
-        linkedin: 'https://linkedin.com/in/rivaldo',
-        github: 'https://github.com/rivaldo',
+        linkedin: 'https://www.linkedin.com/in/rivaldo-hardianto-wibowo/',
+        github: 'https://github.com/RivaldoHardiantoWibowo',
         mail: 'mailto:rivaldo@gmail.com',
     },
     {
         name: 'Muhammad Azqi Madani Ardan',
-        linkedin: 'https://linkedin.com/in/azqi',
-        github: 'https://github.com/azqi',
-        mail: 'mailto:azqi@example.com',
+        linkedin: 'https://www.linkedin.com/in/muhammadazqi/',
+        github: 'https://github.com/MuhammadAzqiMadaniArdan',
+        mail: 'mailto:muhammadazqi098@gmail.com',
     },
 ]
 
@@ -29,14 +29,14 @@ const Footer = () => {
                             alt="logo-dark"
                             width={40}
                             height={40}
-                            className="rounded-full dark:hidden"
+                            className="rounded-full hidden dark:block"
                         />
                         <Image
                             src="/logoLight.png"
                             alt="logo-light"
                             width={40}
                             height={40}
-                            className="rounded-full hidden dark:block"
+                            className="rounded-full dark:hidden"
                         />
                         <h2 className="text-lg font-bold uppercase tracking-widest">
                             Assalafiyah
@@ -55,17 +55,29 @@ const Footer = () => {
                     </h2>
                     <ul className="space-y-2 font-medium text-sm">
                         <li>
-                            <Link href="/alquran" className="hover:underline">
+                            <Link
+                                href="https://github.com/bachors/Al-Quran-ID-API?tab=readme-ov-file"
+                                className="hover:underline"
+                                target="_blank"
+                            >
                                 Al-Quran
                             </Link>
                         </li>
                         <li>
-                            <Link href="/hadist" className="hover:underline">
+                            <Link
+                                href="https://api.myquran.com/"
+                                className="hover:underline"
+                                target="_blank"
+                            >
                                 Hadist
                             </Link>
                         </li>
                         <li>
-                            <Link href="/doa" className="hover:underline">
+                            <Link
+                                href="https://api.myquran.com/"
+                                className="hover:underline"
+                                target="_blank"
+                            >
                                 Doa
                             </Link>
                         </li>
@@ -83,13 +95,13 @@ const Footer = () => {
                                     {dev.name}
                                 </p>
                                 <div className="flex gap-3 mt-1">
-                                    <Link href={dev.linkedin}>
+                                    <Link href={dev.linkedin} target="_blank">
                                         <Linkedin
                                             size={20}
                                             className="hover:scale-110"
                                         />
                                     </Link>
-                                    <Link href={dev.github}>
+                                    <Link href={dev.github} target="_blank">
                                         <GitHub
                                             size={20}
                                             className="hover:scale-110"

@@ -58,7 +58,9 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} antialiased bg-primary dark:bg-font`}
             >
                 <Navbar />
+
                 {children}
+                <hr className="text-accent dark:text-primary" />
                 <Footer />
             </body>
         </html>
