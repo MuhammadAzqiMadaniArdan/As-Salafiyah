@@ -8,7 +8,7 @@ const developers = [
         name: 'Rivaldo Harto Wibowo',
         linkedin: 'https://www.linkedin.com/in/rivaldo-hardianto-wibowo/',
         github: 'https://github.com/RivaldoHardiantoWibowo',
-        mail: 'mailto:rivaldo@gmail.com',
+        mail: 'mailto:rivaldoharw12@gmail.com',
     },
     {
         name: 'Muhammad Azqi Madani Ardan',
@@ -65,20 +65,20 @@ const Footer = () => {
                         </li>
                         <li>
                             <Link
-                                href="https://api.myquran.com/"
-                                className="hover:underline"
-                                target="_blank"
-                            >
-                                Hadist
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="https://api.myquran.com/"
+                                href="https://documenter.getpostman.com/view/841292/2s9YsGittd#d8d78a85-6d30-46d7-914b-de1725dbf54f"
                                 className="hover:underline"
                                 target="_blank"
                             >
                                 Doa
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="https://documenter.getpostman.com/view/841292/2s9YsGittd#d8d78a85-6d30-46d7-914b-de1725dbf54f"
+                                className="hover:underline"
+                                target="_blank"
+                            >
+                                Sholat
                             </Link>
                         </li>
                     </ul>
@@ -132,7 +132,7 @@ const Footer = () => {
                         placeholder="Tulis pesan Anda di sini..."
                     />
                     <Link
-                        href="mailto:assalafiyah@gmail.com"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSfD3Ny8t5UXnDqh0UMdGvNmoTdLejVvKaT3-KHb6jt-W_L7Lg/viewform"
                         className="bg-accent text-white text-sm font-semibold px-4 py-2 rounded-md text-center hover:bg-opacity-90"
                     >
                         Send Message
