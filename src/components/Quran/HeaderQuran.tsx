@@ -55,7 +55,7 @@ const HeaderQuran = () => {
                 </m.p>
             </m.section>
             <m.div
-                className="
+                className="absolute
       w-full h-30 bg-accent rounded-t-[100%]
       z-10
       top-[28rem] sm:top-[27rem] md:top-[27rem] lg:top-[24rem] xl:top-[24rem]
